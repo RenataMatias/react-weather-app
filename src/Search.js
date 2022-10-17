@@ -3,62 +3,51 @@ import axios from "axios";
 import "./Search.css";
 
 export default function Search() {
-  let [city, setCity] = useState("");
-  let [loaded, setLoaded] = useState(false);
-  let [temperature, setTemperature] = useState(null);
-  let [description, setDescription] = useState("");
-  let [humidity, setHumidity] = useState(null);
-  let [wind, setWind] = useState(null);
-  let [icon, setIcon] = useState(null);
-
-  function currentWeather(response) {
-    setLoaded(true);
-    setTemperature(Math.round(response.data.main.temp));
-    setDescription(response.data.weather[0].description);
-    setHumidity(Math.round(response.data.main.humidity));
-    setWind(Math.round(response.data.wind.speed));
-    setIcon(response.data.weather[0].icon);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    let apiKey = `c6844eedf01fc7efca28dfb3664eebd6`;
-    let units = `metric`;
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    axios.get(url).then(currentWeather);
-  }
-
-  function newCity(event) {
-    event.preventDefault();
-    setCity(event.target.value);
-  }
-
-  let form = (
-    <form onSubmit={handleSubmit}>
-      <input type="search" onChange={newCity} placeholder="Type a city" />
-      <input type="submit" value="Search" />
-    </form>
-  );
-
-  if (loaded) {
-    return (
-      <div className="Search">
-        {form}
-        <ul className="currentInfo">
-          <li>Temperature: {temperature}°C</li>
-          <li>Description: {description}</li>
-          <li>Humidity: {humidity}%</li>
-          <li>Wind: {wind}km/h</li>
-          <li>
-            <img
-              src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
-              alt={description}
+  return (
+    <div className="Search">
+      <form>
+        <div className="row">
+          <div className="col-9">
+            <input
+              type="search"
+              placeholder="Enter a city..."
+              className="form-control"
+              autoFocus="on"
             />
-          </li>
-        </ul>
+          </div>
+          <div className="col-3">
+            <input
+              type="submit"
+              value="Search"
+              className="btn btn-primary w-100"
+            />
+          </div>
+        </div>
+      </form>
+      <h1>New York</h1>
+      <ul>
+        <li>Wednesday 07:00</li>
+        <li>Mostly Cloudy</li>
+      </ul>
+      <div className="row mt-3">
+        <div className="col-6">
+          <div className="d-flex">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="Mostly Cloudy"
+            />
+            <span className="temperature">6</span>
+            <span className="unit">°C</span>
+          </div>
+        </div>
+        <div className="col-6">
+          <ul>
+            <li>Preciptation: 15%</li>
+            <li>Humidity: 72%</li>
+            <li>Wind: 13km/h</li>
+          </ul>
+        </div>
       </div>
-    );
-  } else {
-    return form;
-  }
+    </div>
+  );
 }
