@@ -4,26 +4,28 @@ import Search from "./Search";
 export default function App() {
   return (
     <div className="App">
-      <h1>Weather App</h1>
-      <Search />
-      <p>
-        <a
-          href="https://github.com/RenataMatias/react-weather-app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {" "}
-          Open-source code
-        </a>{" "}
-        by{" "}
-        <a
-          href="https://www.linkedin.com/in/rematias/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Renata Matias{" "}
-        </a>
-      </p>
+      <div class="container">
+        <h1>Weather App</h1>
+        <Search />
+        <footer>
+          <a
+            href="https://github.com/RenataMatias/react-weather-app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            Open-source code
+          </a>{" "}
+          by{" "}
+          <a
+            href="https://www.linkedin.com/in/rematias/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Renata Matias{" "}
+          </a>
+        </footer>
+      </div>
     </div>
   );
 }
