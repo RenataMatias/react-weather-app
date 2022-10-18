@@ -12,7 +12,7 @@ export default function Search(props) {
       temperature: Math.round(response.data.main.temp),
       humidity: Math.round(response.data.main.humidity),
       description: response.data.weather[0].description,
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       wind: response.data.wind.speed,
       city: response.data.name,
       date: "Wednesday 07:00",

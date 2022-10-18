@@ -4,7 +4,7 @@ import Search from "./Search";
 export default function App() {
   return (
     <div className="App">
-      <div class="container">
+      <div className="container">
         {/* <h1>Weather App</h1> */}
         <Search defaultCity="Recife" />
         <footer>
