@@ -6,7 +6,7 @@ export default function App() {
     <div className="App">
       <div class="container">
         {/* <h1>Weather App</h1> */}
-        <Search />
+        <Search defaultCity="Recife" />
         <footer>
           <a
             href="https://github.com/RenataMatias/react-weather-app"
