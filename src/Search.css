@@ -50,3 +50,6 @@
   margin-left: 5px;
   /* line-height: 1; */
 }
+.CurrentTemperature a {
+  text-decoration: none;
+}
