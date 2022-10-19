@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function (props) {
+export default function CurrentTemperature(props) {
   const [unit, setUnit] = useState("celsius");
 
   function fahrenheit() {
