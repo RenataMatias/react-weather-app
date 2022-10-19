@@ -15,7 +15,7 @@ export default function Search(props) {
       feels_like: Math.round(response.data.temperature.feels_like),
       humidity: Math.round(response.data.temperature.humidity),
       description: response.data.condition.description,
-      iconUrl: response.data.condition.icon_url,
+      icon: response.data.condition.icon,
       wind: response.data.wind.speed,
       city: response.data.city,
       date: new Date(response.data.time * 1000),
