@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Search.css";
+import CurrentDate from "./CurrentDate";
 
 export default function Search(props) {
   const [currentWeather, setCurrentWeather] = useState({ ready: false });
@@ -15,7 +16,7 @@ export default function Search(props) {
       iconUrl: response.data.condition.icon_url,
       wind: response.data.wind.speed,
       city: response.data.city,
-      date: "Wednesday 07:00",
+      date: new Date(response.data.time * 1000),
     });
   }
 
@@ -43,7 +44,9 @@ export default function Search(props) {
         </form>
         <h1>{currentWeather.city}</h1>
         <ul>
-          <li>{currentWeather.date}</li>
+          <li>
+            <CurrentDate date={currentWeather.date} />
+          </li>
           <li className="text-capitalize">{currentWeather.description}</li>
         </ul>
         <div className="row mt-3">
