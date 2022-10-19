@@ -6,15 +6,15 @@ export default function Search(props) {
   const [currentWeather, setCurrentWeather] = useState({ ready: false });
 
   function SearchWeather(response) {
-    // console.log(response.data);
+    // console.log(response);
     setCurrentWeather({
       ready: true,
-      temperature: Math.round(response.data.main.temp),
-      humidity: Math.round(response.data.main.humidity),
-      description: response.data.weather[0].description,
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      temperature: Math.round(response.data.temperature.current),
+      humidity: Math.round(response.data.temperature.humidity),
+      description: response.data.condition.description,
+      iconUrl: response.data.condition.icon_url,
       wind: response.data.wind.speed,
-      city: response.data.name,
+      city: response.data.city,
       date: "Wednesday 07:00",
     });
   }
@@ -59,7 +59,7 @@ export default function Search(props) {
           </div>
           <div className="col-6">
             <ul>
-              <li>Preciptation: 15%</li>
+              {/* <li>Preciptation: 15%</li> */}
               <li>Humidity: {currentWeather.humidity}%</li>
               <li>Wind: {currentWeather.wind}km/h</li>
             </ul>
@@ -69,9 +69,9 @@ export default function Search(props) {
     );
   } else {
     // let city = "New York";
-    let apiKey = "c6844eedf01fc7efca28dfb3664eebd6";
+    let apiKey = "04oa8b0322cc23f4f1bfd9a0baat56fe";
     let units = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(SearchWeather);
     return "Loading...";
   }
