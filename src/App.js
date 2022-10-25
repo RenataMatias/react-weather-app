@@ -8,7 +8,7 @@ export default function App() {
         <Search defaultCity="Edinburgh" />
         <footer className="text-center">
           <small>
-            This projec was coded by{" "}
+            This projetc was coded by{" "}
             <a
               href="https://www.linkedin.com/in/rematias/"
               target="_blank"
