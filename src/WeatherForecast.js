@@ -4,8 +4,6 @@ import "./WeatherForecast.css";
 import ForecastDay from "./ForecastDay";
 
 export default function WeatherForecast(props) {
-  // console.log(props);
-
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
 
@@ -19,7 +17,6 @@ export default function WeatherForecast(props) {
   }
 
   if (loaded) {
-    console.log(forecast);
     return (
       <div className="WeatherForecast">
         <div className="row">

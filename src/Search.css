@@ -1,13 +1,16 @@
-/* body {
-  font-family: Arial, sans-serif;
-} */
+:root {
+  --font-color: white;
+}
 
 .Search {
   font-family: Arial, sans-serif;
-  border: 1px solid #dadde1;
-  color: #878787;
-  padding: 16px;
-  border-radius: 4px;
+  border: 1px solid #2934b5;
+  /* color: #878787; */
+  color: var(--font-color);
+  padding: 20px;
+  border-radius: 15px;
+  background: #2934b5;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 .Search form {
   margin-bottom: 20px;
@@ -28,28 +31,22 @@
   line-height: 19px;
   list-style: none;
 }
-/* .Search canvas {
-  height: 64px;
-  width: 64px;
-  margin-right: 10px;
-  margin-top: 5px;
-} */
+
 .Search .temperature {
   font-weight: bold;
-  color: rgb(33, 33, 33);
+  color: var(--font-color);
   font-size: 64px;
   font-weight: 400;
   line-height: 64px;
   margin-left: 10px;
 }
 .Search .unit {
-  color: rgb(33, 33, 33);
+  color: var(--font-color);
   font-size: 16px;
   font-weight: 400;
   position: relative;
   top: -32px;
   margin-left: 5px;
-  /* line-height: 1; */
 }
 .CurrentTemperature a {
   text-decoration: none;

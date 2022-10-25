@@ -14,8 +14,8 @@ export default function WeatherInfo(props) {
         <li className="text-capitalize">{props.info.description}</li>
       </ul>
       <div className="row mt-3">
-        <div className="col-6">
-          <div className="d-flex">
+        <div className="col-6 ">
+          <div className="d-flex justify-content-center">
             <WeatherIcon
               iconInfo={props.info.icon}
               alt={props.info.description}
@@ -24,7 +24,7 @@ export default function WeatherInfo(props) {
             <CurrentTemperature celsius={props.info.temperature} />
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-6 text-center">
           <ul>
             <li>Feels Like: {props.info.feels_like}°C</li>
             <li>Humidity: {props.info.humidity}%</li>

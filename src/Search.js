@@ -9,7 +9,6 @@ export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function SearchWeather(response) {
-    // console.log(response);
     setCurrentWeather({
       ready: true,
       coordinates: response.data.coordinates,
@@ -24,13 +23,6 @@ export default function Search(props) {
     });
   }
 
-  function searchApi() {
-    let apiKey = "04oa8b0322cc23f4f1bfd9a0baat56fe";
-    let units = "metric";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(SearchWeather);
-  }
-
   function HandleSubmit(event) {
     event.preventDefault();
     searchApi();
@@ -38,6 +30,13 @@ export default function Search(props) {
 
   function handleNewCity(event) {
     setCity(event.target.value);
+  }
+
+  function searchApi() {
+    let apiKey = "04oa8b0322cc23f4f1bfd9a0baat56fe";
+    let units = "metric";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(SearchWeather);
   }
 
   if (currentWeather.ready) {
@@ -68,6 +67,7 @@ export default function Search(props) {
       </div>
     );
   } else {
-    return searchApi();
+    searchApi();
+    return "Loading...";
   }
 }

@@ -5,8 +5,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        {/* <h1>Weather App</h1> */}
-        <Search defaultCity="Lisbon" />
+        <Search defaultCity="Edinburgh" />
         <footer className="text-center">
           <small>
             This projec was coded by{" "}
