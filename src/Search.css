@@ -5,7 +5,6 @@
 .Search {
   font-family: Arial, sans-serif;
   border: 1px solid #2934b5;
-  /* color: #878787; */
   color: var(--font-color);
   padding: 20px;
   border-radius: 15px;
@@ -47,7 +46,4 @@
   position: relative;
   top: -32px;
   margin-left: 5px;
-}
-.CurrentTemperature a {
-  text-decoration: none;
 }

@@ -46,7 +46,7 @@ export default function Search(props) {
           <div className="row">
             <div className="col-9">
               <input
-                type="search"
+                type="text"
                 placeholder="Enter a city..."
                 className="form-control"
                 autoFocus="on"
